@@ -26,7 +26,7 @@
             &:nth-child(2) {
                 opacity: 0;
                 background-color: $primary-color;
-                transform: translate(-1100px, 0px);
+                transform: translate(-100%, 0px);
             }
 
             &:nth-child(3) {
@@ -35,5 +35,79 @@
             }
         }
 
+    }
+}
+
+// Menu Overlay
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+
+    &-branding,
+    &-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    //Branding side
+    &-branding {
+        margin: 0;
+        padding: 0;
+        background: $primary-color;
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .menu-portrait {
+            width: 250px;
+            height: 250px;
+            background-image: $user-image;
+            background-size: contain;
+            border-radius: 50%;
+            border: 10px solid lighten($color: $primary-color, $amount: 3);
+
+            &:hover {
+                border: 10px solid $secondary-color;
+                @include easeOut;
+            }
+        }
+
+
+    }
+
+    // Navigation Side
+    &-nav {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+        background: darken($color: $primary-color, $amount: 5);
+        transform: translate3d(0, -100%, 0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .nav-item a:hover {
+            border-bottom: 2px solid lighten($color: $primary-color, $amount: 3);
+            color: $secondary-color;
+            @include easeOut;
+        }
     }
 }
