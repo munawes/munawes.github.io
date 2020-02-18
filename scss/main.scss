@@ -104,8 +104,8 @@ main {
 
     .bio-image {
         grid-area: bioImage;
-        height: 240px;
-        width: 240px;
+        height: 500px;
+        width: 500px;
         border-radius: 50%;
         border: $secondary-color 3px solid;
         padding: auto;
@@ -150,6 +150,68 @@ main {
     height: 60px;
 
 }
+
+// Stying the My Work page
+#work {
+    color: set-text-color($primary-color); 
+    overflow: hidden;
+    
+    .projects {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        
+        .writing {
+            order: 1;
+            flex-grow: 1;
+            margin: 10px;
+            background-image: url(/dist/img/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg);
+            background-size: cover;
+            height: 500px;
+            width: 500px;
+            border-radius: 10px;
+
+            &:hover .text {
+                opacity: 1;
+            }
+        }
+
+        .development {
+            order: 2;
+            flex-grow: 1;
+            margin: 10px;
+            background-image: url(/dist/img/florian-olivo-Ek9Znm8lQ1U-unsplash.jpg);
+            background-size: cover;
+            height: 500px;
+            width: 500px;
+            border-radius: 10px;
+
+            &:hover .text {
+                opacity: 1;
+            }
+        }
+
+        .text {
+            @include easeOut;
+            opacity: 0;
+            width: fit-content;
+            border-radius: 10px;
+            font-weight: 400;
+            font-size: 4rem;
+            color: set-text-color($primary-color);
+            margin: auto;
+            background: rgba(lighten($color: $primary-color, $amount: 2), 0.3);
+            border-bottom: $secondary-color 2px solid;
+        }
+
+        
+
+    }
+
+}
+
 
 
 @import "mobile";
