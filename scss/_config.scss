@@ -1,4 +1,4 @@
-$primary-color: grey;
+$primary-color: rgb(8, 5, 5);
 $secondary-color: #2ad850;
 $show-home-image: true;
 $home-image: url(/dist/img/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg);
@@ -27,6 +27,15 @@ $background-opacity: 0.8;
                 background: rgba($primary-color, $background-opacity);
             }
         }
+    }
+}
+
+// Setting text color based on background 
+@function set-text-color($color) {
+    @if (lightness($color) > 40) {
+        @return #000;
+    } @else {
+        @return #fff;
     }
 }
 
