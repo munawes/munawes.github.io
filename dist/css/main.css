@@ -57,6 +57,13 @@
       .menu-branding .menu-portrait:hover {
         border: 10px solid #2ad850;
         transition: all 0.5s ease-out; }
+    .menu-branding .icons {
+      margin-top: 1rem; }
+      .menu-branding .icons a {
+        padding: 0.4rem; }
+        .menu-branding .icons a:hover {
+          color: #2ad850;
+          transition: all 0.5s ease-out; }
   .menu-nav {
     font-size: 2rem;
     margin: 0;
@@ -149,13 +156,6 @@ ul {
 main {
   padding: 4rem;
   min-height: calc(100vh - 60px); }
-  main .icons {
-    margin-top: 1rem; }
-    main .icons a {
-      padding: 0.4rem; }
-      main .icons a:hover {
-        color: #2ad850;
-        transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden;
     color: #000; }
@@ -221,8 +221,6 @@ main {
       height: 500px;
       width: 500px;
       border-radius: 10px; }
-      #work .projects .writing:hover .text {
-        opacity: 1; }
     #work .projects .development {
       order: 2;
       flex-grow: 1;
@@ -232,11 +230,8 @@ main {
       height: 500px;
       width: 500px;
       border-radius: 10px; }
-      #work .projects .development:hover .text {
-        opacity: 1; }
     #work .projects .text {
       transition: all 0.5s ease-out;
-      opacity: 0;
       width: fit-content;
       border-radius: 10px;
       font-weight: 400;
@@ -264,7 +259,7 @@ main {
   .menu-nav {
     height: 75vh;
     transform: translate3d(-100%, 0, 0);
-    font-size: 1rem; }
+    font-size: 2rem; }
   .menu-branding {
     transform: translate3d(100%, 0, 0);
     height: 35vh; }

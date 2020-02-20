@@ -63,18 +63,18 @@ main {
     padding: 4rem;
     min-height: calc(100vh - 60px);
 
-    .icons {
-        margin-top: 1rem;
+    // .icons {
+    //     margin-top: 1rem;
 
-        a {
-            padding: 0.4rem;
+    //     a {
+    //         padding: 0.4rem;
 
-            &:hover {
-                color: $secondary-color;
-                @include easeOut;
-            }
-        }
-    }
+    //         &:hover {
+    //             color: $secondary-color;
+    //             @include easeOut;
+    //         }
+    //     }
+    // }
 
     &#home {
         overflow: hidden;
@@ -173,9 +173,9 @@ main {
             width: 500px;
             border-radius: 10px;
 
-            &:hover .text {
-                opacity: 1;
-            }
+            // &:hover .text {
+            //     opacity: 1;
+            // }
         }
 
         .development {
@@ -188,14 +188,14 @@ main {
             width: 500px;
             border-radius: 10px;
 
-            &:hover .text {
-                opacity: 1;
-            }
+            // &:hover .text {
+            //     opacity: 1;
+            // }
         }
 
         .text {
             @include easeOut;
-            opacity: 0;
+            // opacity: 0;
             width: fit-content;
             border-radius: 10px;
             font-weight: 400;
