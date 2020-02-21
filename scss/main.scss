@@ -104,8 +104,8 @@ main {
 
     .bio-image {
         grid-area: bioImage;
-        height: 500px;
-        width: 500px;
+        height: 250px;
+        width: 250px;
         border-radius: 50%;
         border: $secondary-color 3px solid;
         padding: auto;
@@ -148,7 +148,6 @@ main {
     background: darken($color: $primary-color, $amount: 10);
     color: set-text-color($primary-color);
     height: 60px;
-
 }
 
 // Stying the My Work page
@@ -204,14 +203,94 @@ main {
             margin: auto;
             background: rgba(lighten($color: $primary-color, $amount: 2), 0.3);
             border-bottom: $secondary-color 2px solid;
+        }   
+    }
+}
+
+
+// Styling the development page
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: .3rem;
+    border-radius: 10px;
+    @include easeOut;
+
+    &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+    }
+}
+
+.projects-dev {
+    @include baseGrid;
+    grid-template-columns: repeat(3, 1fr);
+
+   .btn-dark{
+        @extend .btn;
+        background: darken($color: $primary-color, $amount: 50);
+        color: #fff;
+    }
+
+
+    img {
+        width: 100%;
+        height: 500px;
+        width: 500px;
+        border: 3px solid lighten($color: $primary-color, $amount: 3);
+        @include easeOut;
+        border-radius: 10px;
+
+        &:hover {
+            @include baseHover;
         }
-
-        
-
     }
 
 }
 
+//Styling the writing page
+#writing {
+    h3 {
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+}
 
+.projects-writing {
+    @include baseGrid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .article {
+        width: 500px; 
+
+        p {
+            width: 100%;
+            background: darken($color: $primary-color, $amount: 5);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: justify;
+        }
+        img {
+            height: 350px;
+            width: 100%;
+            border-radius: 10px;
+            @include easeOut;
+            
+            &:hover {
+                @include baseHover;
+            }
+        }
+    }
+}
+
+// Styling Contact Page
+.boxes {
+    font-size: 2rem;
+
+    a {
+    border: 3px solid darken($color: $primary-color, $amount: 10)
+    }
+}
 
 @import "mobile";

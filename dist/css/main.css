@@ -174,8 +174,8 @@ main {
   text-align: justify; }
   .about-info .bio-image {
     grid-area: bioImage;
-    height: 500px;
-    width: 500px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     border: #2ad850 3px solid;
     padding: auto; }
@@ -241,6 +241,72 @@ main {
       background: rgba(129, 123, 123, 0.3);
       border-bottom: #2ad850 2px solid; }
 
+.btn, .projects-dev .btn-dark {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: .3rem;
+  border-radius: 10px;
+  transition: all 0.5s ease-out; }
+  .btn:hover, .projects-dev .btn-dark:hover {
+    background: #2ad850;
+    color: #000; }
+
+.projects-dev {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects-dev .btn-dark {
+    background: black;
+    color: #fff; }
+  .projects-dev img {
+    width: 100%;
+    height: 500px;
+    width: 500px;
+    border: 3px solid #847e7e;
+    transition: all 0.5s ease-out;
+    border-radius: 10px; }
+    .projects-dev img:hover {
+      opacity: 0.5;
+      border-color: #37da5b; }
+
+#writing h3 {
+  padding-bottom: 10px;
+  font-weight: bold; }
+
+.projects-writing {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects-writing .article {
+    width: 500px; }
+    .projects-writing .article p {
+      width: 100%;
+      background: #6f6a6a;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: justify; }
+    .projects-writing .article img {
+      height: 350px;
+      width: 100%;
+      border-radius: 10px;
+      transition: all 0.5s ease-out; }
+      .projects-writing .article img:hover {
+        opacity: 0.5;
+        border-color: #37da5b; }
+
+.boxes {
+  font-size: 2rem; }
+  .boxes a {
+    border: 3px solid #625d5d; }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects-dev, .projects-writing {
+    grid-template-columns: repeat(2, 1fr); }
+    .projects-dev img, .projects-writing img {
+      height: 350px;
+      width: 350px; } }
+
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
@@ -265,8 +331,18 @@ main {
     height: 35vh; }
   .about-info {
     grid-template-areas: 'bioImage' 'bio' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects-dev, .projects-writing {
+    grid-template-columns: 1fr; }
+    .projects-dev img, .projects-writing img {
+      height: 300px;
+      width: 300px; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; } }
+    margin-top: 10vh; }
+  .projects-writing {
+    grid-template-columns: 1fr; }
+    .projects-writing img {
+      height: 300px;
+      width: 300px; } }

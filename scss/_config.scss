@@ -30,6 +30,16 @@ $background-opacity: 0.8;
     }
 }
 
+@mixin baseGrid {
+    display: grid;
+    gap: 20px;
+}
+
+@mixin baseHover {
+    opacity: 0.5;
+    border-color: lighten($color: $secondary-color, $amount: 3);
+}
+
 // Setting text color based on background 
 @function set-text-color($color) {
     @if (lightness($color) > 40) {
