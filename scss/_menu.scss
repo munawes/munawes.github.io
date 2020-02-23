@@ -8,9 +8,10 @@
     @include easeOut;
 
     .btn-line {
-        width: 28px;
+        width: 27px;
         height: 3px;
         margin: 0 0 5px 0;
+        border-radius: 10px;;
         background: set-text-color($primary-color);
         @include easeOut;
     }
@@ -43,7 +44,6 @@
     position: fixed;
     top: 0;
     width: 100%;
-    // opacity: 0.9;
     visibility: hidden;
 
     &.show {
@@ -56,9 +56,7 @@
         flex-flow: column wrap;
         align-items: center;
         justify-content: center;
-        float: left;
-        width: 50%;
-        height: 100vh;
+        width: 100%;
         overflow: hidden;
     }
 
@@ -67,8 +65,9 @@
         margin: 0;
         padding: 0;
         background: $primary-color;
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(100%, 0, 0);
         @include easeOut;
+        height: 50vh;
 
         &.show {
             transform: translate3d(0, 0, 0);
@@ -111,16 +110,17 @@
         margin: 0;
         padding: 0;
         background: darken($color: $primary-color, $amount: 5);
-        transform: translate3d(0, -100%, 0);
+        transform: translate3d(-100%, 0, 0);
         @include easeOut;
         opacity: 0.9;
+        height: 50vh;
 
         &.show {
             transform: translate3d(0, 0, 0);
         }
 
         .nav-item {
-            transform: translate3d(600px, 0, 0);
+            transform: translate3d(-100%, 0, 0);
             @include easeOut;
 
             &.show {

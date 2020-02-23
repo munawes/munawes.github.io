@@ -5,6 +5,7 @@
 // General Styling Setup / Zeroing Out
 * {
     box-sizing: border-box;
+    max-width: 100vw;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
     background: $primary-color;
+
 }
 
 // Headings
@@ -25,12 +27,12 @@ h3 {
     font-weight: 400;
 
     &.lg-heading {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     &.sm-heading {
         margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
+        padding: 0.2rem;
         border-radius: 10px;
         background: rgba(lighten($color: $primary-color, $amount: 2), 0.3);
         max-width: max-content;
@@ -60,153 +62,65 @@ ul {
 }
 
 main {
-    padding: 4rem;
-    min-height: calc(100vh - 60px);
-
-    // .icons {
-    //     margin-top: 1rem;
-
-    //     a {
-    //         padding: 0.4rem;
-
-    //         &:hover {
-    //             color: $secondary-color;
-    //             @include easeOut;
-    //         }
-    //     }
-    // }
+    padding: 2rem;
+    max-height: calc(100vh - 60px);
 
     &#home {
         overflow: hidden;
         color: set-text-color($primary-color);
 
         h1 {
-            margin-top: 20vh;
+            margin-top: 10vh;
         }
     }
 }
-
-//Styling for the About Page
-#about {
-    color: set-text-color($primary-color);
-}
-
-
-.about-info {
-    display: grid;
-    gap: 30px;
-    grid-template-areas: 
-    'bioImage bio bio'
-    'job1 job2 job3';
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    text-align: justify;
-
-    .bio-image {
-        grid-area: bioImage;
-        height: 250px;
-        width: 250px;
-        border-radius: 50%;
-        border: $secondary-color 3px solid;
-        padding: auto;
-    }
-    
-    .bio {
-        grid-area: bio;
-    
-        h3 {
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-    }
-    
-    .job {
-        background: lighten($color: $primary-color, $amount: 5);
-        padding: 0.5rem;
-        border-bottom: $secondary-color 5px solid;
-        border-radius: 10px;
-    
-    }
-    
-    .job-1 {
-        grid-area: job1;
-    }
-    
-    .job-2 {
-        grid-area: job2;
-    }
-    
-    .job-3 {
-        grid-area: job3;
-    }
-}
-
 
 #main-footer {
     text-align: center;
     padding: 1rem;
     background: darken($color: $primary-color, $amount: 10);
     color: set-text-color($primary-color);
-    height: 60px;
+    height: 60px;  
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
 }
 
-// Stying the My Work page
-#work {
-    color: set-text-color($primary-color); 
-    overflow: hidden;
-    
-    .projects {
-        display: flex;
-        flex-flow: row wrap;
-        align-content: center;
-        justify-content: space-between;
-        align-items: center;
+//Styling for the About Page
+#about {
+    color: set-text-color($primary-color);
+
+    .about-info {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr;
+        text-align: justify;
+
+        .bio-image {
+            width: 95%;
+            border-radius: 50%;
+            border: $secondary-color 3px solid;
+            padding: auto;
+        }
         
-        .writing {
-            order: 1;
-            flex-grow: 1;
-            margin: 10px;
-            background-image: url(/dist/img/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg);
-            background-size: cover;
-            height: 500px;
-            width: 500px;
-            border-radius: 10px;
-
-            // &:hover .text {
-            //     opacity: 1;
-            // }
+        .bio {
+        
+            h3 {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
         }
-
-        .development {
-            order: 2;
-            flex-grow: 1;
-            margin: 10px;
-            background-image: url(/dist/img/florian-olivo-Ek9Znm8lQ1U-unsplash.jpg);
-            background-size: cover;
-            height: 500px;
-            width: 500px;
+        
+        .job {
+            background: darken($color: $primary-color, $amount: 5);
+            padding: 0.5rem;
+            border-bottom: $secondary-color 5px solid;
             border-radius: 10px;
-
-            // &:hover .text {
-            //     opacity: 1;
-            // }
+        
         }
-
-        .text {
-            @include easeOut;
-            // opacity: 0;
-            width: fit-content;
-            border-radius: 10px;
-            font-weight: 400;
-            font-size: 4rem;
-            color: set-text-color($primary-color);
-            margin: auto;
-            background: rgba(lighten($color: $primary-color, $amount: 2), 0.3);
-            border-bottom: $secondary-color 2px solid;
-        }   
+        
     }
 }
-
 
 // Styling the development page
 .btn {
@@ -225,7 +139,7 @@ main {
 
 .projects-dev {
     @include baseGrid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
 
    .btn-dark{
         @extend .btn;
@@ -236,8 +150,7 @@ main {
 
     img {
         width: 100%;
-        height: 500px;
-        width: 500px;
+        height: 100%;
         border: 3px solid lighten($color: $primary-color, $amount: 3);
         @include easeOut;
         border-radius: 10px;
@@ -252,44 +165,37 @@ main {
 //Styling the writing page
 #writing {
     h3 {
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         font-weight: bold;
+        border-bottom: 2px solid $secondary-color;
     }
 }
 
 .projects-writing {
     @include baseGrid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
 
     .article {
-        width: 500px; 
+        width: 100%; 
 
         p {
-            width: 100%;
             background: darken($color: $primary-color, $amount: 5);
             border-radius: 10px;
             padding: 15px;
             text-align: justify;
         }
+
         img {
-            height: 350px;
+            height: 100%;
             width: 100%;
             border-radius: 10px;
             @include easeOut;
+            background: darken($color: $primary-color, $amount: 6);
             
             &:hover {
                 @include baseHover;
             }
         }
-    }
-}
-
-// Styling Contact Page
-.boxes {
-    font-size: 2rem;
-
-    a {
-    border: 3px solid darken($color: $primary-color, $amount: 10)
     }
 }
 
