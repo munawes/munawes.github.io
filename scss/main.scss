@@ -97,8 +97,7 @@ main {
         text-align: justify;
 
         .bio-image {
-            height: 1fr;
-            width: 300px;
+            width: 95%;
             border-radius: 50%;
             border: $secondary-color 3px solid;
             padding: auto;
@@ -200,4 +199,4 @@ main {
     }
 }
 
-// @import "mobile";
+@import "mobile";

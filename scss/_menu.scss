@@ -8,9 +8,10 @@
     @include easeOut;
 
     .btn-line {
-        width: 28px;
+        width: 27px;
         height: 3px;
         margin: 0 0 5px 0;
+        border-radius: 10px;;
         background: set-text-color($primary-color);
         @include easeOut;
     }
@@ -43,7 +44,6 @@
     position: fixed;
     top: 0;
     width: 100%;
-    // opacity: 0.9;
     visibility: hidden;
 
     &.show {
