@@ -75,16 +75,6 @@ main {
     }
 }
 
-#main-footer {
-    text-align: center;
-    padding: 1rem;
-    background: darken($color: $primary-color, $amount: 10);
-    color: set-text-color($primary-color);
-    height: 60px;  
-    position: fixed;
-    bottom: 0; 
-    width: 100%;
-}
 
 //Styling for the About Page
 #about {
@@ -102,23 +92,23 @@ main {
             border: $secondary-color 3px solid;
             padding: auto;
         }
-        
+
         .bio {
-        
+
             h3 {
                 text-transform: uppercase;
                 font-weight: 600;
             }
         }
-        
+
         .job {
             background: darken($color: $primary-color, $amount: 5);
             padding: 0.5rem;
             border-bottom: $secondary-color 5px solid;
             border-radius: 10px;
-        
+
         }
-        
+
     }
 }
 
@@ -141,7 +131,7 @@ main {
     @include baseGrid;
     grid-template-columns: 1fr;
 
-   .btn-dark{
+    .btn-dark {
         @extend .btn;
         background: darken($color: $primary-color, $amount: 50);
         color: #fff;
@@ -149,7 +139,7 @@ main {
 
 
     img {
-        width: 100%;
+        width: 75%;
         height: 100%;
         border: 3px solid lighten($color: $primary-color, $amount: 3);
         @include easeOut;
@@ -176,7 +166,7 @@ main {
     grid-template-columns: 1fr;
 
     .article {
-        width: 100%; 
+        width: 100%;
 
         p {
             background: darken($color: $primary-color, $amount: 5);
@@ -191,7 +181,7 @@ main {
             border-radius: 10px;
             @include easeOut;
             background: darken($color: $primary-color, $amount: 6);
-            
+
             &:hover {
                 @include baseHover;
             }

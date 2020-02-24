@@ -1,6 +1,6 @@
 // Widescreens
 @include mediaXl {
-    
+
     body {
         font-size: 3rem;
     }
@@ -27,7 +27,7 @@
                 &:nth-child(1) {
                     transform: rotate(45deg) translate(10px, 10px);
                 }
-                
+
                 &:nth-child(3) {
                     transform: rotate(-45deg) translate(6px, -6px);
                 }
@@ -50,9 +50,9 @@
     }
 
     .about-info {
-        grid-template-areas: 
-        'bioImage bio bio'
-        'job1 job2 job3';
+        grid-template-areas:
+            'bioImage bio bio'
+            'job1 job2 job3';
         grid-template-columns: repeat(3, 1fr);
 
         .bio-image {
@@ -85,12 +85,13 @@
 
         .article {
             height: fit-content;
+
         }
     }
 
     .projects-dev {
         grid-template-columns: repeat(3, 1fr);
-        
+
         img {
             height: 50vh;
         }
@@ -103,9 +104,9 @@
 @include mediaLg {
 
     .about-info {
-        grid-template-areas: 
-        'bioImage bio bio'
-        'job1 job2 job3';
+        grid-template-areas:
+            'bioImage bio bio'
+            'job1 job2 job3';
         grid-template-columns: repeat(3, 1fr);
 
         .bio-image {
@@ -133,7 +134,7 @@
             grid-area: job3;
         }
     }
-    
+
     .projects-writing {
         grid-template-columns: repeat(2, 1fr);
 
@@ -141,8 +142,7 @@
             height: fit-content;
 
             img {
-                max-width: 918px;
-                max-height: 612px;
+                max-height: 420px;
             }
         }
     }
